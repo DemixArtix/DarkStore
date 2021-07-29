@@ -1,0 +1,9 @@
+:root {
+    --dark-green: #043E44;
+    --light-green: #7DB945;
+    --light-grey: #F6F6F6;
+    --black: #26303B;
+    --gradient: linear-gradient(90.33deg, #293E42 26.36%, rgba(24, 60, 67, 0) 121.24%);
+    --container-width: 915px;
+    --container-width-mobile: calc(100vw - 20px);
+}
