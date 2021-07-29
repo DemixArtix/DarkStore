@@ -181,6 +181,7 @@
         transform: rotate(-45deg)
       &.prev
         transform: rotate(180deg)
+        margin-bottom: -5px
 
 
 
