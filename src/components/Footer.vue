@@ -3,8 +3,8 @@
     div(class="footer__block container")
       div(class="footer__logo") 
         img(:src="logo")
-      div(class="footer__contacts flex jcb")
-        div(class="footer__phone_list flex ")
+      div(class="footer__contacts flex jcb fcc-m")
+        div(class="footer__phone_list flex fcc-m")
           div(class="footer__phone_item" v-for="({city, number}) of phoneList")
             div(class="footer__phone_city") {{city}}
             a(class="footer__phone_number" :href="'tel:' + number") {{number}}
@@ -89,5 +89,12 @@
     margin-bottom: 0
 
 @media screen and (max-width: 768px)
+  .footer
+    padding-bottom: 75px
+  .footer__block
+    padding: 0 40px
+  .footer__contacts
+    & > *:not(:last-child)
+      margin-bottom: 20px
 
 </style>

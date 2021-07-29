@@ -65,6 +65,7 @@
     methods: {
       checkWindowHeight() {
         console.log(window.innerWidth);
+        console.log(window.scrollY);
         if(window.innerWidth <= 768) {
           this.itemWidth = 300
         } else {

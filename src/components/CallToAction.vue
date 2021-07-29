@@ -8,16 +8,20 @@
           div(class="cta__text")
             h2(class="cta__title" v-html="title")
             p(class="cta__description" v-html="description")
-      button(class="cta__button") К покупкам
+      button(class="cta__button" @click="showPopup = true") К покупкам
+    PopUp(v-if="showPopup" @closePopup="closePopup")
 
 
 
 </template>
 
 <script>
+  import PopUp from "./PopUp";
   export default {
     name: "CallToAction",
+    components: {PopUp},
     data: () => ({
+      showPopup: false,
       list: [
         {
           icon: require('../assets/icons/Group 103coupon.svg'),
@@ -37,6 +41,11 @@
           item.insertAdjacentHTML('afterend', '<div class="cta__plus"><span>+</span></div>')
         }
       })
+    },
+    methods: {
+      closePopup(bool) {
+        this.showPopup = bool
+      }
     }
   }
 </script>
