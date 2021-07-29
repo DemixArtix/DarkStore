@@ -119,6 +119,8 @@
           min-width: 60px !important
           width: 60px !important
           height: 60px !important
+          margin-right: 0 !important
+          margin-bottom: 20px !important
         .cta__title
           font-size: 30px !important
           text-align: center !important

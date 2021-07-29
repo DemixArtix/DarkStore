@@ -9,7 +9,10 @@
           div(class="steps__slider_screen" ref="screen")
             div(class="steps__slider_item" v-for="({image, title, description}, index) of slides" :key="index")
               div(class="steps__slider_card")
-                img(class="steps__slider_image" :src="image")
+                div(class="steps__slider_image_block")
+                  img(class="steps__slider_image" :src="image")
+                  div(class="steps__slider_step")
+                    span {{index + 1}}
                 h3(class="steps__slider_title") {{title}}
                 p(class="steps__slider_description") {{description}}
         button(class="steps__slider_button next" v-if="windowWidth > 768" @click="nextSlide")
@@ -127,8 +130,30 @@
               height: 450px
               box-sizing: border-box
               box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1)
-              .steps__slider_image
-                width: 100%
+              .steps__slider_image_block
+                position: relative
+                overflow: hidden
+                border: 2px solid var(--light-green)
+                max-height: 284px
+
+                .steps__slider_image
+                  width: 100%
+                .steps__slider_step
+                  position: absolute
+                  left: -10px
+                  top: -15px
+                  width: 50px
+                  height: 50px
+                  border-radius: 50%
+                  background-color: #fff
+                  display: flex
+                  align-items: center
+                  justify-content: center
+                  font-size: 22px
+                  color: var(--light-green)
+                  font-weight: bold
+
+
     .steps__slider_button
       cursor: pointer
       position: relative
@@ -157,6 +182,9 @@
       &.prev
         transform: rotate(180deg)
 
+
+
+
   @media screen and (max-width: 768px)
     .steps__title
       width: auto !important
@@ -170,9 +198,18 @@
           .steps__slider_card
             height: 350px !important
             padding: 20px !important
-            .steps__slider_image
+            .steps__slider_image_block
+              max-height: 115px !important
+              .steps__slider_image
+              .steps__slider_step
+                top: -7px !important
+                left: -5px !important
+                width: 40px !important
+                height: 40px !important
+                font-size: 16px !important
             .steps__slider_title,.steps__slider_description
               font-size: 14px
+              text-align: center
     .steps__slider_mobile
 
 
