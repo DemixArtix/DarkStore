@@ -14,7 +14,10 @@
     components: {
       Footer,
       Header
-    }
+    },
+    data: () => ({
+      someData: true
+    })
   }
 </script>
 
